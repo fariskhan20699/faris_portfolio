@@ -523,3 +523,9 @@
     initAnchorScroll();
   });
 })();
+
+document.querySelectorAll(".coming-soon-btn").forEach(button => {
+    button.addEventListener("click", () => {
+        alert("🚀 Coming Soon!\nThis project is currently under development.");
+    });
+});
