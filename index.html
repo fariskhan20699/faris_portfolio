@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Muhammad Faris Khan | Computer Science Student &amp; Aspiring Software Engineer</title>
+<meta name="description" content="Portfolio of Muhammad Faris Khan, a Computer Science student focused on C++, software development, Data Structures & Algorithms, and modern web development.">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Muhammad Faris Khan | Computer Science Student & Aspiring Software Engineer">
+<meta property="og:description" content="Portfolio of Muhammad Faris Khan, a Computer Science student focused on C++, software development, Data Structures & Algorithms, and modern web development.">
+<meta property="og:site_name" content="Muhammad Faris Khan — Portfolio">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23050505'/%3E%3Ctext x='50' y='64' font-family='monospace' font-size='42' font-weight='700' fill='%233B82F6' text-anchor='middle'%3EMF%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ================= LOADER ================= -->
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader-inner">
+    <div class="loader-mark">MF</div>
+    <div class="loader-name">Muhammad Faris Khan</div>
+    <div class="loader-bar-track">
+      <div class="loader-bar-fill" id="loaderFill"></div>
+    </div>
+    <div class="loader-percent" id="loaderPercent">0%</div>
+  </div>
+</div>
+
+<!-- ================= CUSTOM CURSOR ================= -->
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+<div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+<!-- ================= 3D BACKGROUND ================= -->
+<canvas id="bgCanvas" class="bg-canvas" aria-hidden="true"></canvas>
+<div class="bg-grid" aria-hidden="true"></div>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ================= NAVBAR ================= -->
+<header class="navbar" id="navbar">
+  <div class="navbar-inner">
+    <a href="#home" class="brand" aria-label="Muhammad Faris Khan — home">
+      <span class="brand-mark">MF</span>
+      <span class="brand-name">Muhammad Faris Khan</span>
+    </a>
+
+    <nav class="nav-links" id="navLinks" aria-label="Primary">
+      <a href="#home" class="nav-link active" data-section="home">Home</a>
+      <a href="#about" class="nav-link" data-section="about">About</a>
+      <a href="#skills" class="nav-link" data-section="skills">Skills</a>
+      <a href="#projects" class="nav-link" data-section="projects">Projects</a>
+      <a href="#journey" class="nav-link" data-section="journey">Journey</a>
+      <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+    </nav>
+
+    <div class="navbar-actions">
+      <a class="navbar-icon-btn" href="https://github.com/fariskhan20699" target="_blank" rel="noopener noreferrer" aria-label="Open GitHub profile">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.52 2.87 8.35 6.84 9.7.5.1.68-.22.68-.5 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.73 0 0 .84-.28 2.75 1.05a9.3 9.3 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.42.2 2.47.1 2.73.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.48-.01 2.82 0 .28.18.61.69.5A10.03 10.03 0 0 0 22 12.26C22 6.58 17.52 2 12 2z"/></svg>
+      </a>
+      <a class="navbar-resume-btn" href="#contact">Resume</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark theme" aria-pressed="false">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ================= MOBILE MENU ================= -->
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <nav aria-label="Mobile primary">
+    <a href="#home" class="mobile-link" data-section="home">Home</a>
+    <a href="#about" class="mobile-link" data-section="about">About</a>
+    <a href="#skills" class="mobile-link" data-section="skills">Skills</a>
+    <a href="#projects" class="mobile-link" data-section="projects">Projects</a>
+    <a href="#journey" class="mobile-link" data-section="journey">Journey</a>
+    <a href="#contact" class="mobile-link" data-section="contact">Contact</a>
+  </nav>
+  <div class="mobile-menu-footer">
+    <a href="https://github.com/fariskhan20699" target="_blank" rel="noopener noreferrer">GitHub</a>
+    <button class="theme-toggle" id="themeToggleMobile" aria-label="Toggle light and dark theme">
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+  </div>
+</div>
+
+<main id="main">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero" id="home" aria-label="Introduction">
+    <div class="hero-inner">
+      <div class="hero-content reveal">
+        <p class="hero-label"><span class="label-dot"></span>COMPUTER SCIENCE STUDENT</p>
+        <h1 class="hero-heading">M. Faris Khan</h1>
+        <p class="hero-subtitle">Aspiring Software Engineer</p>
+        <p class="hero-desc">I build software projects while developing strong foundations in C++, Object Oriented Programming, Data Structures &amp; Algorithms, and modern web development.</p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <a href="#contact" class="btn btn-secondary">Contact Me</a>
+        </div>
+        <a href="https://github.com/fariskhan20699" target="_blank" rel="noopener noreferrer" class="hero-github-link">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.52 2.87 8.35 6.84 9.7.5.1.68-.22.68-.5 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.73 0 0 .84-.28 2.75 1.05a9.3 9.3 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.42.2 2.47.1 2.73.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.48-.01 2.82 0 .28.18.61.69.5A10.03 10.03 0 0 0 22 12.26C22 6.58 17.52 2 12 2z"/></svg>
+          View GitHub
+        </a>
+      </div>
+
+      <div class="hero-object-wrap reveal" style="--reveal-delay:120ms">
+        <div class="hero-status-badge">
+          <span class="status-pulse"></span>
+          Currently learning Data Structures &amp; Algorithms
+        </div>
+
+        <div class="terminal-3d" id="terminal3d">
+          <div class="terminal-face terminal-top" aria-hidden="true"></div>
+          <div class="terminal-face terminal-side" aria-hidden="true"></div>
+          <div class="terminal-face terminal-front">
+            <div class="terminal-bar">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+              <span class="terminal-title">developer.cpp</span>
+            </div>
+            <pre class="terminal-code" aria-label="C++ code sample"><code><span class="tok-kw">class</span> <span class="tok-class">Developer</span> {
+<span class="tok-kw">public</span>:
+    <span class="tok-type">string</span> focus = <span class="tok-str">"Cs Engineering"</span>;
+    <span class="tok-type">string</span> language = <span class="tok-str">"C++"</span>;
+    <span class="tok-type">string</span> learning = <span class="tok-str">"DSA"</span>;
+};</code></pre>
+            <div class="terminal-caret" aria-hidden="true"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-cue" aria-hidden="true">
+      <span>Scroll</span>
+      <div class="scroll-cue-line"></div>
+    </div>
+  </section>
+
+  <!-- ================= ABOUT ================= -->
+  <section class="about" id="about" aria-labelledby="about-heading">
+    <div class="section-inner">
+      <div class="section-head reveal">
+        <span class="section-number">01</span>
+        <h2 class="section-title" id="about-heading">About</h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p>I am a Computer Science student at Iqra University, Islamabad, currently building my foundation in CS engineering through programming, problem solving, and practical projects.</p>
+          <p>I primarily work with C++ and have studied Programming Fundamentals, Object-Oriented Programming, file handling, exception handling, and core programming concepts.</p>
+          <p>Alongside C++, I am expanding my knowledge of Data Structures &amp; Algorithms, web development, JavaScript, SQL, and backend development.</p>
+        </div>
+
+        <div class="about-card-wrap reveal" style="--reveal-delay:120ms">
+          <div class="about-card tilt-card">
+            <div class="about-card-row">
+              <span class="about-card-label">Degree</span>
+              <span class="about-card-value">BS Computer Science</span>
+            </div>
+            <div class="about-card-row">
+              <span class="about-card-label">University</span>
+              <span class="about-card-value">Iqra University</span>
+            </div>
+            <div class="about-card-row">
+              <span class="about-card-label">Semester</span>
+              <span class="about-card-value">2nd</span>
+            </div>
+            <div class="about-card-row">
+              <span class="about-card-label">Focus</span>
+              <span class="about-card-value">Software Engineering</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SKILLS ================= -->
+  <section class="skills" id="skills" aria-labelledby="skills-heading">
+    <div class="section-inner">
+      <div class="section-head reveal">
+        <span class="section-number">02</span>
+        <h2 class="section-title" id="skills-heading">Tech Stack</h2>
+      </div>
+
+      <div class="skills-grid">
+
+        <article class="skill-card tilt-card reveal">
+          <h3 class="skill-card-title">Programming</h3>
+          <ul class="skill-tag-list">
+            <li>C++</li>
+            <li>Python</li>
+          </ul>
+        </article>
+
+        <article class="skill-card tilt-card reveal" style="--reveal-delay:60ms">
+          <h3 class="skill-card-title">Web</h3>
+          <ul class="skill-tag-list">
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>JavaScript</li>
+          </ul>
+        </article>
+
+        <article class="skill-card tilt-card reveal" style="--reveal-delay:120ms">
+          <h3 class="skill-card-title">Core</h3>
+          <ul class="skill-tag-list">
+            <li>OOP</li>
+            <li>Data Structures</li>
+            <li>Algorithms</li>
+            <li>Problem Solving</li>
+            <li>File Handling</li>
+          </ul>
+        </article>
+
+        <article class="skill-card tilt-card reveal" style="--reveal-delay:180ms">
+          <h3 class="skill-card-title">Tools</h3>
+          <ul class="skill-tag-list">
+            <li>Git</li>
+            <li>GitHub</li>
+            <li>VS Code</li>
+          </ul>
+        </article>
+
+        <article class="skill-card tilt-card reveal" style="--reveal-delay:240ms">
+          <h3 class="skill-card-title">Database</h3>
+          <ul class="skill-tag-list">
+            <li>SQL</li>
+            <li>MySQL</li>
+          </ul>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PROJECTS ================= -->
+  <section class="projects" id="projects" aria-labelledby="projects-heading">
+    <div class="section-inner">
+      <div class="section-head reveal">
+        <span class="section-number">03</span>
+        <h2 class="section-title" id="projects-heading">Selected Projects</h2>
+      </div>
+
+      <!-- Project 01 — DSA Learning Platform --
+      <article class="project project-01 reveal">
+        <div class="project-preview tilt-card">
+          <div class="preview-window">
+            <div class="preview-bar">
+              <span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span>
+              <span class="preview-url">dsa-learn/docs</span>
+            </div>
+            <div class="preview-body doc-preview">
+              <div class="doc-sidebar">
+                <span class="doc-sidebar-item active">Arrays</span>
+                <span class="doc-sidebar-item">Linked Lists</span>
+                <span class="doc-sidebar-item">Stacks</span>
+                <span class="doc-sidebar-item">Trees</span>
+              </div>
+              <div class="doc-main">
+                <div class="doc-line doc-line-title"></div>
+                <div class="doc-code-block">
+                  <span class="tok-kw">for</span> (<span class="tok-type">int</span> i = 0; i &lt; n; i++)
+                </div>
+                <div class="doc-line"></div>
+                <div class="doc-line short"></div>
+                <div class="doc-bars">
+                  <span style="height:40%"></span><span style="height:70%"></span><span style="height:55%"></span><span style="height:90%"></span><span style="height:30%"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-info">
+          <h3 class="project-title">DSA Learning Platform</h3>
+          <p class="project-desc">An interactive learning platform designed to make Data Structures and Algorithms easier to understand through structured lessons, C++ examples, visualizations, and practice.</p>
+          <ul class="project-features">
+            <li>DSA lessons</li>
+            <li>C++ examples</li>
+            <li>Algorithm visualizations</li>
+            <li>Practice questions</li>
+            <li>Interactive learning</li>
+          </ul>
+          <div class="tech-tags">
+            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>C++</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/fariskhan20699" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-small">View Project</a>
+            <a href="https://github.com/fariskhan20699" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-small">GitHub</a>
+          </div>
+        </div>
+      </article>-->
+
+      <!-- Project 02 — CGPA Calculator -->
+      <article class="project project-02 reveal">
+        <div class="project-info">
+          <h3 class="project-title">CGPA Calculator</h3>
+          <p class="project-desc">A responsive academic utility that allows students to calculate semester GPA and cumulative CGPA.</p>
+          <ul class="project-features">
+            <li>Dynamic subjects</li>
+            <li>Credit hours</li>
+            <li>Grade calculation</li>
+            <li>GPA &amp; CGPA</li>
+            <li>Responsive UI</li>
+          </ul>
+          <div class="tech-tags">
+            <span>HTML</span><span>CSS</span><span>JavaScript</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/fariskhan20699" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-small">View Project</a>
+            <a href="https://github.com/fariskhan20699" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-small">GitHub</a>
+          </div>
+        </div>
+
+        <div class="project-preview tilt-card">
+          <div class="preview-window browser-preview">
+            <div class="preview-bar">
+              <span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span>
+              <span class="preview-url">cgpa-calculator.app</span>
+            </div>
+            <div class="preview-body calc-preview">
+              <div class="calc-row"><span>Subject</span><span>Credit Hrs</span><span>Grade</span></div>
+              <div class="calc-row"><span class="calc-chip">Data Structures</span><span class="calc-chip">3</span><span class="calc-chip">A</span></div>
+              <div class="calc-row"><span class="calc-chip">OOP</span><span class="calc-chip">4</span><span class="calc-chip">A-</span></div>
+              <div class="calc-result">
+                <span>Semester GPA</span>
+                <strong>3.82</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 03 — Bank Management System -->
+      <article class="project project-03 reveal">
+        <div class="project-preview tilt-card">
+          <div class="preview-window">
+            <div class="preview-bar">
+              <span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span>
+              <span class="preview-url">bank-system.exe</span>
+            </div>
+            <div class="preview-body terminal-preview">
+              <p><span class="term-prompt">&gt;</span> Welcome to Bank Management System</p>
+              <p><span class="term-prompt">&gt;</span> 1. Create Account</p>
+              <p><span class="term-prompt">&gt;</span> 2. Deposit</p>
+              <p><span class="term-prompt">&gt;</span> 3. Withdraw</p>
+              <p><span class="term-prompt">&gt;</span> 4. Check Balance</p>
+              <p class="term-active"><span class="term-prompt">&gt;</span> Enter choice: <span class="term-cursor-blink">_</span></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-info">
+          <h3 class="project-title">Bank Management System</h3>
+          <p class="project-desc">A C++ application created to practice Object-Oriented Programming, file handling, account management, and structured software design.</p>
+          <div class="tech-tags">
+            <span>C++</span><span>OOP</span><span>File Handling</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/fariskhan20699" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-small">View Project</a>
+            <a href="https://github.com/fariskhan20699" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-small">GitHub</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 04 — Student Management System -->
+      <article class="project project-04 reveal">
+        <div class="project-info">
+          <h3 class="project-title">Student Management System</h3>
+          <p class="project-desc">A C++ based management application focused on data handling, file storage, CRUD operations, and programming fundamentals.</p>
+          <div class="tech-tags">
+            <span>C++</span><span>File Handling</span><span>CRUD</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/fariskhan20699" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-small">View Project</a>
+            <a href="https://github.com/fariskhan20699" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-small">GitHub</a>
+          </div>
+        </div>
+
+        <div class="project-preview tilt-card">
+          <div class="preview-window">
+            <div class="preview-bar">
+              <span class="dot dot-red"></span><span class="dot dot-yellow"></span><span class="dot dot-green"></span>
+              <span class="preview-url">student-dashboard</span>
+            </div>
+            <div class="preview-body table-preview">
+              <div class="table-row table-head"><span>ID</span><span>Name</span><span>Grade</span><span>Status</span></div>
+              <div class="table-row"><span>001</span><span>A. Khan</span><span>A</span><span class="tag-ok">Active</span></div>
+              <div class="table-row"><span>002</span><span>S. Ahmed</span><span>B+</span><span class="tag-ok">Active</span></div>
+              <div class="table-row"><span>003</span><span>M. Ali</span><span>A-</span><span class="tag-pending">Pending</span></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ================= DSA JOURNEY ================= -->
+  <section class="journey" id="journey" aria-labelledby="journey-heading">
+    <div class="section-inner">
+      <div class="section-head reveal">
+        <span class="section-number">04</span>
+        <h2 class="section-title" id="journey-heading">My DSA Journey</h2>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-track" aria-hidden="true"></div>
+
+        <div class="timeline-stage reveal">
+          <div class="timeline-marker status-completed" aria-hidden="true"></div>
+          <div class="timeline-card tilt-card">
+            <span class="timeline-status status-completed-tag">Completed</span>
+            <h3>Stage 01 — Programming Fundamentals</h3>
+            <ul class="timeline-tags">
+              <li>Variables</li><li>Data Types</li><li>Conditions</li><li>Loops</li><li>Functions</li><li>Arrays</li><li>Pointers</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-stage reveal" style="--reveal-delay:100ms">
+          <div class="timeline-marker status-completed" aria-hidden="true"></div>
+          <div class="timeline-card tilt-card">
+            <span class="timeline-status status-completed-tag">Completed</span>
+            <h3>Stage 02 — Object-Oriented Programming</h3>
+            <ul class="timeline-tags">
+              <li>Classes</li><li>Objects</li><li>Constructors</li><li>Encapsulation</li><li>Inheritance</li><li>Polymorphism</li><li>Exception Handling</li><li>File Handling</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-stage reveal" style="--reveal-delay:200ms">
+          <div class="timeline-marker status-current" aria-hidden="true"></div>
+          <div class="timeline-card tilt-card is-current">
+            <span class="timeline-status status-current-tag">Current</span>
+            <h3>Stage 03 — Data Structures</h3>
+            <ul class="timeline-tags">
+              <li>Arrays</li><li>Strings</li><li>Linked Lists</li><li>Stack</li><li>Queue</li><li>Trees</li><li>Graphs</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-stage reveal" style="--reveal-delay:300ms">
+          <div class="timeline-marker status-planned" aria-hidden="true"></div>
+          <div class="timeline-card tilt-card">
+            <span class="timeline-status status-planned-tag">Planned</span>
+            <h3>Stage 04 — Algorithms</h3>
+            <ul class="timeline-tags">
+              <li>Searching</li><li>Sorting</li><li>Recursion</li><li>Binary Search</li><li>Two Pointer</li><li>Sliding Window</li><li>Greedy</li><li>Dynamic Programming</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= EDUCATION ================= -->
+  <section class="education" aria-labelledby="education-heading">
+    <div class="section-inner">
+      <h2 class="visually-hidden" id="education-heading">Education</h2>
+      <div class="education-card tilt-card reveal">
+        <div class="education-glow" aria-hidden="true"></div>
+        <h3>BS Computer Science</h3>
+        <p class="education-uni">Iqra University <span class="dot-sep">·</span> Islamabad Campus</p>
+        <div class="education-status">
+          <span class="status-pulse"></span>
+          Currently: 2nd Semester
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= GITHUB ================= -->
+  <section class="github-cta" aria-labelledby="github-heading">
+    <div class="section-inner">
+      <div class="github-cta-inner reveal">
+        <h2 id="github-heading">Code. Learn. Build.</h2>
+        <p>My GitHub documents the projects, experiments, and concepts I work on while developing my software engineering skills.</p>
+        <a href="https://github.com/fariskhan20699" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.52 2.87 8.35 6.84 9.7.5.1.68-.22.68-.5 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.73 0 0 .84-.28 2.75 1.05a9.3 9.3 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.42.2 2.47.1 2.73.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.48-.01 2.82 0 .28.18.61.69.5A10.03 10.03 0 0 0 22 12.26C22 6.58 17.52 2 12 2z"/></svg>
+          View GitHub
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section class="contact" id="contact" aria-labelledby="contact-heading">
+    <div class="section-inner">
+      <div class="section-head reveal">
+        <span class="section-number">05</span>
+        <h2 class="section-title" id="contact-heading">Let's Connect</h2>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-intro reveal">
+          <h3 class="contact-big-heading">Have an idea?<br>Let's talk.</h3>
+          <p class="contact-desc">Whether you want to discuss a project, collaborate, or simply connect, feel free to send me a message.</p>
+
+          <div class="contact-links">
+            <a href="mailto:khangee90870@gmail.com" class="contact-link-row">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 6l-10 7L2 6"/><path d="M2 6h20v12H2z"/></svg>
+              khangee90870@gmail.com
+            </a>
+            <a href="https://github.com/fariskhan20699" target="_blank" rel="noopener noreferrer" class="contact-link-row">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.52 2.87 8.35 6.84 9.7.5.1.68-.22.68-.5 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.73 0 0 .84-.28 2.75 1.05a9.3 9.3 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.42.2 2.47.1 2.73.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.48-.01 2.82 0 .28.18.61.69.5A10.03 10.03 0 0 0 22 12.26C22 6.58 17.52 2 12 2z"/></svg>
+              github.com/fariskhan20699
+            </a>
+          </div>
+        </div>
+
+        <div class="form-card-wrap reveal" style="--reveal-delay:120ms">
+          <form class="form-card tilt-card" id="contactForm" novalidate>
+            <!-- Web3Forms: replace YOUR_ACCESS_KEY_HERE with your real key from web3forms.com -->
+            <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+            <input type="checkbox" name="botcheck" class="hidden-honeypot" style="display:none" tabindex="-1" autocomplete="off">
+
+            <div class="field" id="field-name">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="Your full name" autocomplete="name">
+              <div class="field-error" role="alert">Please enter your name.</div>
+            </div>
+
+            <div class="field" id="field-email">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email">
+              <div class="field-error" role="alert">Please enter a valid email address.</div>
+            </div>
+
+            <div class="field" id="field-subject">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" placeholder="What is this about?">
+              <div class="field-error" role="alert">Please enter a subject.</div>
+            </div>
+
+            <div class="field" id="field-message">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Tell me a bit more..."></textarea>
+              <div class="field-error" role="alert">Please enter a message.</div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
+              <span class="btn-label">Send Message</span>
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              <span class="btn-spinner" aria-hidden="true"></span>
+            </button>
+
+            <div class="status-msg" id="statusMsg" role="status" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="section-inner footer-inner">
+    <div class="footer-brand">
+      <span class="footer-name">Muhammad Faris Khan</span>
+      <span class="footer-role">Computer Science Student · Aspiring Software Engineer</span>
+    </div>
+
+    <div class="footer-links">
+      <a href="https://github.com/fariskhan20699" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="mailto:khangee90870@gmail.com">Email</a>
+      <a href="#" id="footerLinkedin">LinkedIn</a>
+    </div>
+
+    <p class="footer-copy">© 2026 Muhammad Faris Khan</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
