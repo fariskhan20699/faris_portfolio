@@ -531,7 +531,7 @@ body.has-custom-cursor, body.has-custom-cursor a, body.has-custom-cursor button{
    9. PROJECTS
    ============================================================ */
 .project{
-  display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 56px; align-items: center;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center;
   margin-bottom: 130px; perspective: 1600px;
 }
 .project:last-child{ margin-bottom: 0; }
